@@ -1,0 +1,221 @@
+
+.container{
+    width: 100%;
+}
+.centerTxt{
+    margin-top: 10px;
+    text-align: center;
+}
+
+.setFlagImg{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.bold{
+    margin-left: 3px;
+    font-weight: 500;
+}
+.year_Country{
+    width: 100%;
+    margin-top: 25px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* border: 2px solid green; */
+}
+.financial_Year{
+    display: flex;
+    /* border: 2px solid black; */
+}
+.country{
+    display: flex;
+}
+.aside{
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: 10px;
+}
+.big{
+    padding: 3px;
+}
+
+.line{
+    width: 90%;
+    height: 1px;
+    margin-top: 10px;
+    margin-left: 4rem;
+    border: 1px solid grey;
+}
+
+
+.purchase_Sale{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem;
+    /* border: 2px solid green; */
+}
+
+.grey_color{
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    font-weight: 500;
+}
+.inp_pur_sale{
+    width: 20vw;
+    margin-top: 4px;
+    padding: 3px;
+    /* border: 2px solid red; */
+}
+
+.expenses_investment{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 0.9rem;
+    /* border: 1px solid red; */
+}
+.set_expenses{
+    /* margin-left: 1rem; */
+    /* border: 2px solid red; */
+}
+.set_months{
+    /* margin-left: 1rem; */
+    /* padding-left: 3rem; */
+    margin-right: 4.8rem;
+    /* border: 2px solid green; */
+}
+.inp_exp_inv{
+    width: 20vw;
+    margin-top: 4px;
+    padding: 3px;
+}
+.small_Inp{
+    width: 45%;
+    margin: 3px;
+    padding: 3px;
+    cursor: pointer;
+    /* color: white; */
+    background-color: rgb(55,172,176);
+    /* border: 2px solid red; */
+}
+
+.years{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 14px;
+    /* margin-left: 3px; */
+    /* border: 1px solid red; */
+}
+
+.arrow_left{
+    display: flex;
+    color: rgb(0, 0, 0);
+    align-items: center;
+    font-weight: 500;
+}
+.arrow_right{
+    display: flex;
+    color: rgb(0, 0, 0);
+    align-items: center;
+    font-weight: 500;
+}
+
+.annual_Income{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem;
+    /* border: 1px solid black; */
+}
+.ann_income{
+    width: 20vw;
+    /* border: 2px solid red; */
+}
+.tax{
+    width: 20vw;
+    /* border: 2px solid green; */
+}
+.select{
+    width: 100%;
+    padding: 4px;
+    margin-top: 3px;
+}
+
+.gain_discount{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1.5rem;
+    /* border: 2px solid red; */
+}
+.gains{
+    width: 20vw;
+    /* border: 2px solid red; */
+}
+.inp_gains{
+    width: 100%;
+    padding: 3px;
+    margin-top: 3px;
+}
+.discount{
+    width: 20vw;
+    /* border: 2px solid green; */
+}
+.inp_discount{
+    width: 100%;
+    padding: 3px;
+    margin-top: 3px;
+}
+
+.tax_amount_pay{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 2rem;
+}
+.tax_amount{
+    width: 20vw;
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(167, 244, 167);
+    border-radius: 5px;
+    /* border: 2px solid green; */
+}
+.tax_pay{
+    width: 20vw;
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(157, 214, 249);
+    border-radius: 5px;
+    /* border: 2px solid red; */
+}
+.green_color{
+    color: rgb(4, 125, 4);
+}
+.blue_color{
+    color: blue;
+}
+
+.setWidth{
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 2px;
+    padding: 2px;
+    padding-left: 7px;
+    border-radius: 3px;
+    border: 1px solid rgb(118,118,118);
+}

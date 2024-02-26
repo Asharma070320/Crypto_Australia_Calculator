@@ -120,7 +120,7 @@ setTaxToPay(calculateTaxToPay());
       <div className="year_Country">
         <div className="financial_Year">
           <p className="aside">Financial Year</p>
-          <input className="big" type="number" />
+          <input className="big" type="number" placeholder="2023-2024" disabled/>
         </div>
         <div className="country">
           <p className="aside">Country :-</p>
@@ -173,14 +173,14 @@ setTaxToPay(calculateTaxToPay());
           <p className="grey_color">Investment Type</p>
 
           <button
-           className={investmenttype === "Short Term" ? "active" : ""}
+           className={investmenttype === "Short Term" ? "small_Inp" : ""}
            onClick={() => setInvestementType("Short Term")}
           >
             Short Term
           </button>
 
           <button
-             className={investmenttype === "Long Term" ? "active" : ""}
+             className={investmenttype === "Long Term" ? "small_Inp" : ""}
              onClick={() => setInvestementType("Long Term")}
           >
             Long Term

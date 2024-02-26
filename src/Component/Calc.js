@@ -1,39 +1,39 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Calc.css";
 
 const Calc = () => {
   const [pur, setPur] = useState(0);
   const [sel, setSel] = useState(0);
   const [exp, setExp] = useState(0);
+  const [capitalGainsAmount, setCapitalGainsAmount] = useState(0);
+  const [taxrate, setTaxRate] = useState("");
   const [capitalGainAmount, setCapitalGainAmount] = useState(0);
+  const [longTermGainsDiscount, setLongTermGainsDiscount] = useState(0);
+  const [selectedValue, setSelectedValue] = useState(45001);
+  const [investmenttype, setInvestementType] = useState("Long Term");
+  const [netCapitalGains, setNetCapitalGains] = useState(0);
+  const [taxToPay, setTaxToPay] = useState(0);
 
-  const getpurchaseprice = (e) => {
-    setPur(e.target.value);
-    //  setCapitalGainAmount(pur)
-  };
 
-  const getsellprice = (e) => {
-    setSel(e.target.value);
-  };
+  useEffect(()=> {
 
-  const getexpenses = (e) => {
-    setExp(e.target.value);
-  };
+    const gains = sel - pur - exp;
+    console.log(gains);
+    setCapitalGainsAmount(gains);
 
-  console.log(pur, sel, exp);
+  // console.log(pur, sel, exp);
 
-  const [shortTermDisabled, setShortTermDisabled] = useState(false);
-  const [longTermDisabled, setLongTermDisabled] = useState(false);
+  
 
-  const shortBtn = () => {
-    setShortTermDisabled(true);
-    setLongTermDisabled(false);
-  };
+  // const shortBtn = () => {
+  //   setShortTermDisabled(true);
+  //   setLongTermDisabled(false);
+  // };
 
-  const longBtn = () => {
-    setShortTermDisabled(false);
-    setLongTermDisabled(true);
-  };
+  // const longBtn = () => {
+  //   setShortTermDisabled(false);
+  //   setLongTermDisabled(true);
+  // };
 
   // const [annualIncome, setAnnualIncome] = useState(45001);
   // const getAnnualIncome = (e) => {
@@ -41,36 +41,77 @@ const Calc = () => {
   //   setAnnualIncome(e.target.value);
   // };
 
-  const calculateCapitalGain = () => {
-    const capitalGain = pur - sel - exp;
-    setCapitalGainAmount(capitalGain);
-  };
+  
 
-  const [selectedValue, setSelectedValue] = useState("$5902");
 
-  const handleSelectChange = (event) => {
-    setSelectedValue(event.target.value);
-  };
+  // const handleSelectChange = (event) => {
+  //   setSelectedValue(event.target.value);
+  // };
 
   // console.log(selectedValue);
 
-  const getTaxRate = () => {
-    switch (selectedValue) {
-      case "$0":
-        return "0%";
-      case "$18,200":
-        return "19%";
-      case "$45,000":
-        return "32.5%";
-      case "$120,000":
-        return "37%";
-      case "$180,000":
-        return "45%";
-      default:
-        return "0%";
+  const calculateTaxRate = () => {
+    
+    // console.log(selectedValue)
+    if (selectedValue >= 180001) {
+      return "$51,667 + 45.5% of excess over $180,000";
+    } else if (selectedValue >= 120001) {
+      return "$29,467 + 37% of excess over $120,000";
+    } else if (selectedValue >= 45001) {
+      return "$5,092 + 32.5% of excess over $45,000";
+    } else if (selectedValue >= 18201) {
+      return "Nil + 19% of excess over $18,200";
+    } else {
+      return "0%";
     }
   };
 
+  setTaxRate(calculateTaxRate);
+
+  if (investmenttype === "Long Term" && gains > 0) {
+    setLongTermGainsDiscount(gains * 0.5);
+  } else {
+    setLongTermGainsDiscount(0);
+  }
+
+  // console.log(longTermGainsDiscount, capitalGainAmount);
+  if (investmenttype === "Long Term") {
+    setNetCapitalGains(gains - parseFloat(longTermGainsDiscount));
+  } else {
+    setNetCapitalGains(gains);
+  }
+
+  const calculateTaxToPay = () => {
+    debugger;
+    const taxRateParts = taxrate.match(/([\d.]+)%/);
+    if (taxRateParts) {
+    let percentPart = taxRateParts ? parseFloat(taxRateParts[1]) : "0";
+     percentPart = percentPart / 100;
+     console.log("percentPart => ", percentPart)
+    if (selectedValue >= 180001) {
+      let newRes =  (netCapitalGains * percentPart).toFixed(2);
+      return newRes;
+    } else if (selectedValue >= 120001) {
+        let newRes =  (netCapitalGains * percentPart).toFixed(2);
+        return newRes;
+    } else if (selectedValue >= 45001) {
+        let newRes =  (netCapitalGains * percentPart).toFixed(2);
+        return newRes;
+    } else if (selectedValue >= 18201) {
+        let newRes =  (netCapitalGains * percentPart).toFixed(2);
+        return newRes;
+    } else {
+      return 0;
+    }
+  } else {
+    return 0;
+  }
+};
+
+setTaxToPay(calculateTaxToPay());
+  
+
+}, [taxrate,pur,exp,sel,capitalGainAmount,selectedValue, investmenttype, capitalGainsAmount, longTermGainsDiscount])
   return (
     <div className="container">
       <h2 className="centerTxt">Free Crypto Tax Calculator Australia</h2>
@@ -103,7 +144,7 @@ const Calc = () => {
             className="inp_pur_sale"
             type="number"
             placeholder="Enter the purchase price"
-            onChange={getpurchaseprice}
+            onChange={(e)=>setPur(e.target.value)}
           />
         </div>
         <div>
@@ -112,7 +153,7 @@ const Calc = () => {
             className="inp_pur_sale"
             type="number"
             placeholder="Enter the sell price"
-            onChange={getsellprice}
+            onChange={(e)=> setSel(e.target.value)}
           />
         </div>
       </div>
@@ -125,24 +166,22 @@ const Calc = () => {
             className="inp_exp_inv"
             type="number"
             placeholder="Expenses"
-            onChange={getexpenses}
+            onChange={(e)=> setExp(e.target.value)}
           />
         </div>
         <div className="set_months">
           <p className="grey_color">Investment Type</p>
 
           <button
-            className={`small_Inp ${shortTermDisabled ? "disabled" : ""}`}
-            onClick={shortBtn}
-            disabled={shortTermDisabled}
+           className={investmenttype === "Short Term" ? "active" : ""}
+           onClick={() => setInvestementType("Short Term")}
           >
             Short Term
           </button>
 
           <button
-            className={`small_Inp ${longTermDisabled ? "disabled" : ""}`}
-            onClick={longBtn}
-            disabled={longTermDisabled}
+             className={investmenttype === "Long Term" ? "active" : ""}
+             onClick={() => setInvestementType("Long Term")}
           >
             Long Term
           </button>
@@ -166,13 +205,13 @@ const Calc = () => {
           <select
             className="select"
             value={selectedValue}
-            onChange={handleSelectChange}
+            onChange={(e)=> setSelectedValue(e.target.value)}
           >
-            <option value="$0">$0 - $18,200</option>
-            <option value="$18,200">$18,201 - $45,000</option>
-            <option value="$45,000">$240,000 - $360,000</option>
-            <option value="$120,000">$360,000 - $480,000</option>
-            <option value="$180,000">$480,000 - $560,000</option>
+          <option value={0}>$0 - $18,200</option>
+            <option value={18201}>$18,201 - $45,000</option>
+            <option value={45001}>$45,001 - $120,000</option>
+            <option value={120001}>$120,001 - $180,000</option>
+            <option value={180001}>$180,001+</option>
           </select>
         </div>
         <div className="tax">
@@ -180,35 +219,39 @@ const Calc = () => {
             Tax Rate
           </p>
           <p className="grey_color">
-            $ 5,902 - {getTaxRate()} of excess over {selectedValue}
+            {taxrate}
           </p>
         </div>
       </div>
 
       {/* gain and discount part */}
-      <div className="gain_discount">
+     {
+      investmenttype== "Long Term" && (
+        <div className="gain_discount">
         <div className="gains">
           <p className="grey_color">Capital gains amount</p>
           {/* <input className="inp_gains" type="text" onChange={getupadatedVal} placeholder={total} value={total} /> */}
-          <p className="setWidth">${sel - pur - exp}</p>
+          <p className="setWidth">{ sel - pur - exp}</p>
         </div>
         <div className="discount">
           <p className="grey_color">Discount for long term gains</p>
           {/* <input type="text" className="inp_discount" /> */}
-          <p className="setWidth">${(sel - pur - exp) / 2}</p>
+          <p className="setWidth">{ longTermGainsDiscount}</p>
         </div>
         {/* <button onClick={calculateCapitalGain}>click here</button> */}
       </div>
+      )
+     }
 
       {/* Final Part */}
       <div className="tax_amount_pay">
         <div className="tax_amount">
           <p>Net Capital gains tax amount</p>
-          <h2 className="green_color">$2,500</h2>
+          <h2 className="green_color">{netCapitalGains}</h2>
         </div>
         <div className="tax_pay">
           <p>The tax you need to pay*</p>
-          <h2 className="blue_color">$812.5</h2>
+          <h2 className="blue_color">{taxToPay}</h2>
         </div>
       </div>
     </div>

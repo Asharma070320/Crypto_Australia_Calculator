@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+Hosted Link:- https://crypto-australia-calculator.vercel.app/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+                                                           Free Crypto Tax Calculator Australia
+Overview:-
 
-In the project directory, you can run:
+This project provides a free and open-source crypto tax calculator specifically designed for users in Australia. It aims to simplify the process of calculating taxes on cryptocurrency transactions, helping individuals comply with tax regulations while managing their crypto portfolios.
 
-### `npm start`
+Key Features:-
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+User-Friendly Interface: The calculator offers an intuitive interface that makes it easy for users to input their transaction data and generate accurate tax reports.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Support for Various Cryptocurrencies: It supports a wide range of cryptocurrencies commonly traded in Australia, ensuring that users can accurately calculate taxes for different assets.
 
-### `npm test`
+Automated Calculations: The calculator automates the tax calculation process, saving users time and effort. It considers factors such as capital gains, losses, and holding periods to provide precise results.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Compliance with Australian Tax Laws: The calculator is designed to comply with Australian tax laws and regulations related to cryptocurrency transactions. It ensures that users accurately report their crypto activities to the Australian Taxation Office (ATO).
 
-### `npm run build`
+Privacy and Security: Privacy and security are prioritized in the design of the calculator. User data is handled securely, and measures are taken to protect sensitive information.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+How to Use:-
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To use the Free Crypto Tax Calculator Australia, follow these steps:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Input Transactions: Enter details of your cryptocurrency transactions, including buy/sell dates, amounts, and prices.
 
-### `npm run eject`
+Generate Report: Once you've entered all your transactions, generate a tax report using the calculator.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Review and Submit: Review the generated report to ensure accuracy, then use it to complete your tax filings with the ATO.

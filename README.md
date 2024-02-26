@@ -1,12 +1,12 @@
-Hosted Link:- https://crypto-australia-calculator.vercel.app/
+# Hosted Link:- https://crypto-australia-calculator.vercel.app/
 
 
                                                            Free Crypto Tax Calculator Australia
-Overview:-
+# Overview:-
 
 This project provides a free and open-source crypto tax calculator specifically designed for users in Australia. It aims to simplify the process of calculating taxes on cryptocurrency transactions, helping individuals comply with tax regulations while managing their crypto portfolios.
 
-Key Features:-
+# Key Features:-
 
 User-Friendly Interface: The calculator offers an intuitive interface that makes it easy for users to input their transaction data and generate accurate tax reports.
 
@@ -18,7 +18,7 @@ Compliance with Australian Tax Laws: The calculator is designed to comply with A
 
 Privacy and Security: Privacy and security are prioritized in the design of the calculator. User data is handled securely, and measures are taken to protect sensitive information.
 
-How to Use:-
+# How to Use:-
 
 To use the Free Crypto Tax Calculator Australia, follow these steps:
 
